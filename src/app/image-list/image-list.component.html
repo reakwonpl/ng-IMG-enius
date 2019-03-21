@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="searchString" placeholder="What u need?" class="search">
+<button (click) ="searchImages(searchString)" type="button">Find</button>
+
+<p *ngIf="searching">Getting data...</p>
+
+<div *ngFor="let image of images" class="image-container">
+  <img src="{{image.webformatURL}}">
+  <p>User:{{image.user}}</p>
+  <p>Tags:{{image.tags}}</p>
+  <p>Comments:{{image.comments}}</p>
+  <p>Likes:{{image.likes}}</p> 
+  <p>Favorites:{{image.favorites}}</p> 
+</div>
